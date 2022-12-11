@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="<%=data.guild.name%>" property="og:title">
+        <meta content="<%=data.guild.description.length > 150 ? data.guild.description.substr(0, 150)+"..." : data.guild.description%>" property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/partners/<%=data.guild.id%>" property="og:url">
+        <meta content="<%=data.guild.iconURL%>" property="og:image">
+        <link rel="stylesheet" href="/guild.css"> 
+        <%- include('partials/head.ejs') %>
+        <title><%=data.guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %> 
+        <section id="guild-container">
+            <div>
+                <%if(req.session.user){%>
+                    <%if(req.session.user.id === data.representative.id && data.moderatorsId.includes(req.session.user.id)){%> -->
+                        <div style="margin: 40px 0 0 0;" class="header-guild-container">
+                            <div style="text-align: center;">
+                                <img class="guild-icon" onerror="this.src = `/discord-icon.png`" src="/partners/<%=data.guild.id%>/<%=data.ticketId%>.png" alt="">
+                            </div>
+                            <div style="text-align: center;">
+                                <h3 style="font-size: 20px;"><b><%=data.guild.name%></b></h3>
+                            </div>
+                        </div>
+                    <%}else{%>
+                        <div class="header-guild-container">
+                            <div style="text-align: center;">
+                                <img class="guild-icon" onerror="this.src = `/discord-icon.png`" src="/partners/<%=data.guild.id%>/<%=data.ticketId%>.png" alt="">
+                            </div>
+                            <div style="text-align: center;">
+                                <h3 style="font-size: 20px;"><b><%=data.guild.name%></b></h3>
+                            </div>
+                        </div>
+                    <%}%>
+                <%}else{%>
+                    <div class="header-guild-container">
+                        <div style="text-align: center;">
+                            <img class="guild-icon" onerror="this.src = `/discord-icon.png`" src="/partners/<%=data.guild.id%>/<%=data.ticketId%>.png" alt="">
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 20px;"><b><%=data.guild.name%></b></h3>
+                        </div>
+                    </div>
+                <%}%> 
+                <div>
+                    <div class="button-container">
+                        <a style="padding: 8px 80px 8px 80px;" class="btn btn-success" href="<%=data.guild.inviteLink%>"><b>JOIN</b></a>
+                    </div>
+                    <%if(req.session.user){%>
+                        <%if(req.session.user.id === data.representative.id){%>
+                            <form action="/partners/<%=data.guild.id%>/refresh" method="post">
+                                <div class="container-btn">
+                                    <%if(req.session.user.id === data.representative.id){%>
+                                        <input class="btn btn-success" type="submit" value="REFRESH" name="refresh">
+                                    <%}%> 
+                                    <a class="btn btn-success" href="/partners/<%=data.guild.id%>/edit">EDIT</a>
+                                </div>
+                            </form>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+            <div>
+                <textarea id="description-container" style="resize: none;opacity: 1;" cols="80" rows="20" disabled><%=data.guild.description%></textarea>
+            </div>
+        </section>
+    </body>
+</html>

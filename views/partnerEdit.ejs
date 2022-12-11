@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/edit.css">
+        <%- include('partials/head.ejs') %> 
+        <title><%=data.guild.name%> | Edit</title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="edit-page-container">
+            <div class="edit-guild-container">
+                <form action="/partners/<%=data.guild.id%>/edit" method="post">
+                    <div class="header-container">
+                        <b>EDITING <%=data.guild.name.toLocaleUpperCase()%></b>
+                    </div>
+                    <%if(req.session.user.id === data.representative.id){%>
+                        <div class="moderators-id-container">
+                            <div class="header-edit-container">Moderator IDs</div>
+                            <div style="color: white;" class="modsId-description">This is optional, choose 2 trusted people that can edit this page.</div>
+                            <%if(data.moderatorsId[0]){%>
+                                <input class="input-moderator-id" type="number" name="moderatorId1" placeholder="1234" value="<%=data.moderatorsId[0]%>">
+                            <%}else{%>
+                                <input class="input-moderator-id" type="number" name="moderatorId1" placeholder="1234" value="">
+                            <%}%>
+                            <%if(data.moderatorsId[1]){%>
+                                <input class="input-moderator-id" type="number" name="moderatorId2" placeholder="5678" value="<%=data.moderatorsId[1]%>">
+                            <%}else{%>
+                                <input class="input-moderator-id" type="number" name="moderatorId2" placeholder="5678" value="">
+                            <%}%>
+                        </div>
+                    <%}%>
+                    <div class="invitelink-container">
+                        <div class="header-edit-container">Invite Link</div>
+                        <input type="url" name="inviteLink" value="<%=data.guild.inviteLink%>" placeholder="https://discord.gg/AFwd5Q8" required>
+                    </div>
+                    <div class="banner-container">
+                        <div class="header-edit-container">Banner URL</div>
+                        <%if(data.guild.banner){%>
+                            <input type="url" name="bannerURL" value="<%=data.guild.banner%>">
+                        <%}else{%>
+                            <input type="url" name="bannerURL" value="">
+                        <%}%>
+                    </div>
+                    <div class="description-container">
+                        <div class="header-edit-container">Description</div>
+                        <textarea class="input-description" name="description" cols="75" rows="15" maxlength="4096" required><%=data.guild.description%></textarea> 
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" name="save" value="SAVE">
+                        <input class="btn btn-primary" type="submit" name="cancel" value="CANCEL">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

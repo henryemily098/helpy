@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/ticket.css">
+        <%- include('partials/head.ejs') %>
+        <title>Request | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="ticket-container">
+            <form action="/partner/ticket/<%=fetchData.userInformation.userId%>/<%=fetchData.partnerTicket.ticketId%>" method="post">
+                <img class="guild-icon" style="height: 60px;width: auto;" src="<%=fetchData.partnerTicket.guildInfo.iconURL%>" alt="guild-icon">
+                <div class="guild-info-container">
+                    <div>
+                        <h4 style="text-align: center;"><%=fetchData.partnerTicket.guildInfo.name%></h4>
+                        <div style="text-align: center;font-size: 10px;">
+                            Requested By: <b><%=fetchData.userInformation.userTag%></b>
+                        </div>
+                        <div class="guild-description-container">
+                            <textarea style="resize: none;" name="description" cols="100" rows="17" disabled><%=fetchData.partnerTicket.guildInfo.description%></textarea>
+                        </div>
+                    </div>
+                    <%if(guild.members.cache.get(fetchData.userInformation.userId)){%>
+                        <%if(guild.members.cache.get(req.session.user.id) && guild.members.cache.get(req.session.user.id).roles.cache.has("862700534058582017")){%>
+                            <div style="text-align: center;margin-top: 10px;">
+                                <input class="btn btn-success" type="submit" value="ACCEPT" name="schema">
+                                <input class="btn btn-success" type="submit" value="DECLINE" name="schema">
+                                <a class="btn btn-success" href="<%=fetchData.partnerTicket.guildInfo.inviteLink%>" target="_blank">JOIN</a>
+                            </div>
+                        <%}%>
+                    <%}else{%>
+                        <%if(guild.members.cache.get(req.session.user.id) && guild.members.cache.get(req.session.user.id).roles.cache.has("862700534058582017")){%>
+                            <div style="text-align: center;margin-top: 10px;">
+                                <div style="font-size: 12px;text-align: center;">
+                                    This user haven't joined the server yet! You can't accept this request until the user join the server!
+                                </div>
+                                <input class="btn btn-success" type="submit" value="ACCEPT" name="schema" disabled>
+                                <input class="btn btn-success" type="submit" value="DECLINE" name="schema" disabled>
+                                <a class="btn btn-success" href="<%=fetchData.partnerTicket.guildInfo.inviteLink%>" target="_blank">JOIN</a>
+                            </div>
+                        <%}else{%>
+                            <div style="font-size: 12px;text-align: center;">
+                                You're not join <a style="color: purple;" href="/discord"><%=guild.name%></a> yet! We can't accept you until you're join the server!
+                            </div>
+                        <%}%>
+                    <%}%>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

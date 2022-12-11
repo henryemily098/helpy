@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://getwallpapers.com/wallpaper/full/2/4/6/75337.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.contact-page-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-send {
+    color: white;
+    margin: 50px 0 0 100px;
+}
+
+input[type=text] {
+    width: 500px;
+}
+
+input[type=url] {
+    width: 500px;
+}
+
+textarea {
+    width: 500px;
+    resize: none;
+}
+
+.partner-example-container {
+    margin: 50px 100px 0 0;
+}
+
+.partner-example-image {
+    border-radius: 15px;
+    width: auto;
+    height: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-send {
+        margin: 50px 0 10px 0;
+    }
+
+    input[type=text] {
+        width: 200%;
+    }
+    
+    input[type=url] {
+        width: 200%;
+    }
+    
+    textarea {
+        width: 200%;
+        resize: none;
+    }
+
+    .partner-example-container {
+        display: none;
+    }
+}

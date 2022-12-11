@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://getwallpapers.com/wallpaper/full/3/3/3/318761.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.edit-guild-container {
+    margin: 50px;
+}
+
+.header-container {
+    color: white;
+    font-size: 30px;
+}
+
+.header-edit-container {
+    color: white;
+    margin: 10px 0 0 0;
+    font-size: 20px;
+}
+
+.modsId-description {
+    font-size: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    width: 20%;
+    -moz-appearance: textfield;
+}
+
+input[type=url] {
+    width: 40%;
+}
+
+.input-description {
+    resize: none;
+}
+
+input[type=submit] {
+    width: 15%;
+    margin: 10px 0 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .edit-guild-container {
+        margin: 10px 0 0 0;
+    }
+    
+    .header-container {
+        color: white;
+        font-size: 20px;
+    }
+    
+    .header-edit-container {
+        color: white;
+        margin: 10px 0 0 0;
+        font-size: 15px;
+    }
+    
+    .modsId-description {
+        font-size: 10px;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    input[type=number] {
+        width: 40%;
+        -moz-appearance: textfield;
+    }
+    
+    input[type=url] {
+        width: 80%;
+    }
+    
+    textarea {
+        width: 100%;
+        resize: none;
+    }
+    
+    input[type=submit] {
+        width: 30%;
+        margin: 10px 0 0 0;
+    }
+}

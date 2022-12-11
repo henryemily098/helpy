@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/submissions.css">
+        <%- include('partials/head.ejs') %> 
+        <title>Submissions | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section>
+            <form action="/teams/application/<%=member.user.id%>" method="post">
+                <%if(data.guider.boolean){%>
+                    <div class="guide-control" style="text-align: center;">
+                        <h2>This Person Has Already Taken By <b><%=guild.members.cache.get(data.guider.id).user.username%></b>!</h2>
+                        <input class="btn btn-success" type="submit" value="GUIDE NOW!" disabled>
+                    </div>
+                <%}else{%>
+                    <div class="guide-control" style="text-align: center;">
+                        <h2>Guide This Person</h2>
+                        <div class="warning-message">‼️Warning‼️<br>After you click this button, you can't undo this action!</div>
+                        <input class="btn btn-success" type="submit" value="GUIDE NOW!" name="take">
+                    </div>
+                <%}%>
+                <form class="question-answer-container" action="" method="post">
+                    <%for(let d of data.questions){%>
+                        <div class="card-container">
+                            <div class="question"><b><%=d.question%></b></div>
+                            <textarea class="answer" style="color: black;resize: none;" disabled><%=d.answer%></textarea>
+                        </div>
+                    <%}%>
+                    <div class="btn-container">
+                        <%if(data.guider.boolean){%>
+                            <%if(req.session.user.id === data.guider.id){%>
+                                <div class="">You choose whether this person is accepted or not!</div>
+                                <input class="btn btn-success" type="submit" value="ACCEPT" name="accept">
+                                <input class="btn btn-success" type="submit" value="DECLINE" name="declined">
+                            <%}else{%>
+                                <div class="">You can't determine if this person is accepted or not!</div>
+                                <input class="btn btn-success" type="submit" value="ACCEPT" disabled>
+                                <input class="btn btn-success" type="submit" value="DECLINE" disabled>
+                            <%}%>
+                        <%}else{%>
+                            <input class="btn btn-success" type="submit" value="ACCEPT" disabled>
+                            <input class="btn btn-success" type="submit" value="DECLINE" disabled>
+                        <%}%>
+                    </div>
+                </form>
+            </form>
+        </section> 
+    </body>
+</html>

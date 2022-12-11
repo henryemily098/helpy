@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="Partners Terms and Requirements" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/partners/terms" property="og:url">
+        <meta content="<%=guild.iconURL({ dynamic: true, format: "png", size: 1024 })%>" property="og:image">
+        <link rel="stylesheet" href="/partnerTerms.css">
+        <%- include('partials/head.ejs') %> 
+        <title>Terms | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %> 
+        <section class="partner-terms-header">
+            <div class="partner-terms-header-container">
+                <div class="partner-terms-guider">
+                    <img class="partner-terms-guider-avatar" onerror="this.src = `/discord-icon.png`" src="<%=member.user.displayAvatarURL(bot.data.avatarOptions)%>" alt="">
+                    <div class="partner-terms-guider-information">
+                        <div class="partner-terms-guider-tag"><b><%=member.user.username%></b></div>
+                        <div class="partner-terms-guider-role" onclick="window.location = `/teams`"><%=member.roles.highest.name.toLocaleUpperCase()%></div>
+                    </div>
+                </div>
+                <div class="partner-terms-description">
+                    Welcome to Partner Terms! This is the page where we provide information about the terms and requirements for becoming our partner. By meeting the terms and requirements of our partners, you can partner with us as well as work together to make our servers a safe and comfortable server.
+                </div>
+            </div>
+        </section>
+        <section class="terms-requirements-container">
+            <div class="section-terms">
+                <div class="header-terms"><b>1). Your Server Doesn't Contain Any NSFW/NSFL</b></div>
+                <div class="description-terms">
+                    Our community does not accept NSFW and NSFL content at all, nor is it created by the FNaF fandom or not. It's not that we don't want to accept, but we are trying to find a server that everyone can accept. Our community does not accept NSFW and NSFL content at all, nor is it created by the FNaF fandom or not. It's not that we don't want to accept, but we are trying to find a server that everyone can accept. Because we don't know if anyone is sensitive to NSFW/NSFL.
+                </div>
+            </div>
+            <div class="section-terms">
+                <div class="header-terms"><b>2). 100 Members (Not Include Bots)</b></div>
+                <div class="description-terms">
+                    Your server has at least 100 members. This can also be seen from the development of Discord, which has more and more users, as well as several server advertising platforms. So it's not that hard to have 100 members if you are active and develop your server often.
+                </div>
+            </div>
+            <div class="section-terms">
+                <div class="header-terms"><b>3). Have Staff Manage Partners On Your Server</b></div>
+                <div class="description-terms">
+                    Each partner server must have a partner manager, this is so that when there is a change on a server, the partner manager can notify our staff. In addition, it shows us that you are serious about partnering with us.
+                </div>
+            </div>
+            <div class="section-terms">
+                <div class="header-terms"><b>4). Follow Discord ToS And Guidelines</b></div>
+                <div class="description-terms">
+                    Each server must comply with the <span onclick="window.location = `http:\/\/dis.gd/terms`">Discord Terms and Service</span> and <span onclick="window.location = `http:\/\/dis.gd/terms`">Discord Guidelines</span>, in order to show us that (again) you are serious about partnering with us and you are a server/community that follows every Discord rule.
+                </div>
+            </div>
+        </section>
+        <section class="terms-footer-container">
+            <div class="footer-container">
+                <div class="footer-information-container">
+                    <div class="footer-header"><b>Ready To Apply?</b></div>
+                    <div class="footer-description">Fill out all partner forms in accordance with the conditions we provide, and we will consider them carefully.</div>
+                    <div class="btn btn-success" onerror="this.onclick = `/partners/apply`" onclick="window.location = `/partners/apply`">Apply For Partnership</div>
+                </div>
+                <img class="partner-image-container" src="/partner-example.png" alt="">
+            </div>
+        </section>
+    </body>
+</html>

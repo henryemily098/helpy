@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://getwallpapers.com/wallpaper/full/1/1/a/75228.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.fnaf-multiverse-description-container {
+    padding: 230px 0 230px 0;
+    justify-content: center;
+}
+
+.social-media-btn {
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.helpy-welcome-icon {
+    width: auto;
+    height: 200px;
+}
+
+.fnaf-multiverse-description {
+    justify-content: left;
+    margin: 20px 100px 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("https://getwallpapers.com/wallpaper/full/1/1/a/75228.jpg");
+        background-repeat: no-repeat;
+        background-size: 300%;
+    }
+
+    .main-section-container {
+        margin: 150px 0 0 0;
+    }
+
+    .helpy-welcome-icon {
+        width: auto;
+        height: 50px;
+        margin: 25px 0 0 0;
+    }
+
+    .fnaf-multiverse-description-container {
+        padding: 20px 0 20px 0;
+        justify-content: center;
+    }
+    
+    .header-description {
+        font-size: 15px;
+    }
+
+    .fnaf-multiverse-description {
+        justify-content: left;
+        margin: 20px 20px 0 0;
+        font-size: 10px;
+    }
+}

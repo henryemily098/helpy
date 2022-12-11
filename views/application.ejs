@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/application.css">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="Staff Application" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/teams/application" property="og:url">
+        <meta content="<%=guild.iconURL({ dynamic: true, format: "png", size: 1024 })%>" property="og:image">
+        <%- include('partials/head.ejs') %>
+        <title>Staff Application | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="form-container">
+            <%if(guild.members.cache.get(req.session.user.id)){%>
+                <%if(guild.members.cache.get(req.session.user.id).roles.cache.has("862700534058582017")){%>
+                    <%if(bot.data.ownerId.includes(req.session.user.id)){%>
+                        <form class="control-application" action="/teams/application/status" method="post">
+                            <%if(application.status){%>
+                                <div>You can close this application by click <b>CLOSE</b> button!</div>
+                                <input class="btn btn-success" type="submit" value="OPEN" name="open" disabled>
+                                <input class="btn btn-success" type="submit" value="CLOSE" name="close">
+                            <%}else{%>
+                                <div>You can open this application by click <b>OPEN</b> button!</div>
+                                <input class="btn btn-success" type="submit" value="OPEN" name="open">
+                                <input class="btn btn-success" type="submit" value="CLOSE" name="close" disabled>
+                            <%}%>
+                        </form>
+                    <%}%>
+                    <%if(application.status){%>
+                        <div class="form-section">
+                            <h3>You're Already Become Staff!</h2>
+                            <div class="section-question">
+                                <div class="header-question"><b>What do you know about Discord?</b></div>
+                                <textarea disabled></textarea>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>Have you ever had experience as an admin, staff, or moderator?</b></div>
+                                <div class="choice">
+                                    <div class="choice-container">
+                                        <div class="choice-item">
+                                            <input type="radio" value="YES" disabled>
+                                            <label class="radio-label">YES</label>
+                                        </div>
+                                        <div class="choice-item">
+                                            <input type="radio" value="NO" disabled>
+                                            <label class="radio-label">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>How many servers do you have?</b></div>
+                                <input type="number" value="" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>How active are you from a scale of 1-10?</b></div>
+                                <input type="number" value="" placeholder="1 - 10" maxlength="2" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>What is your timezone?</b></div>
+                                <input type="text" value="" maxlength="256" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>Have you ever had problems with other staff on a different server that forced you to leave the server? And why?</b></div>
+                                <textarea disabled></textarea>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>If you became official staff, what would you do?</b></div>
+                                <input type="text" value="" maxlength="1000" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>What will you do if a raider/spammer comes and your the only staff only or the other staff online is busy?</b></div>
+                                <input type="text" value="" maxlength="1000" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>Have you ever had to kick or get banned from other servers, because of what you did?</b></div>
+                                <input type="text" disabled>
+                            </div>
+                            <div class="section-question">
+                                <div class="header-question"><b>If you think that there are rules that are incomplete in explaining something, what are they? And how to explain it briefly and completely?</b></div>
+                                <textarea disabled></textarea>
+                            </div>
+                            <button class="btn btn-success" disabled>SUBMIT</button>
+                        </div>
+                    <%}else{%>
+                        <div style="text-align: center;">
+                            <h2>The Application Has Been Closed!</h2>
+                            <div>
+                                <img class="vector-locked" src="https://static.vecteezy.com/system/resources/previews/000/616/062/original/vector-lock-icon.jpg" alt="">
+                            </div>
+                        </div>
+                    <%}%>
+                <%}else{%>
+                    <%if(application.status){%>
+                        <%if(data){%>
+                            <%if(bot.data.ownerId.includes(req.session.user.id)){%>
+                                <form class="control-application" action="/teams/application/status" method="post">
+                                    <div>You can close this application by click <b>CLOSE</b> button!</div>
+                                    <input class="btn btn-success" type="submit" value="OPEN" name="open" disabled>
+                                    <input class="btn btn-success" type="submit" value="CLOSE" name="close">
+                                </form>
+                            <%}%>
+                            <div class="form-section">
+                                <h2>You're already fill the application!</h2>
+                                <div class="clipboard">
+                                    <canvas height="200" width="200" class="clipboard-checks"></canvas>
+                                </div>
+                            </div>
+                        <%}else{%>
+                            <%if(bot.data.ownerId.includes(req.session.user.id)){%>
+                                <form class="control-application" action="/teams/application/status" method="post">
+                                    <div>You can close this application by click <b>CLOSE</b> button!</div>
+                                    <input class="btn btn-success" type="submit" value="OPEN" name="open" disabled>
+                                    <input class="btn btn-success" type="submit" value="CLOSE" name="close">
+                                </form>
+                            <%}%>
+                            <form class="form-section" action="/teams/application/submit" method="post">
+                                <h3>Fill This Application To Register As Staff</h2>
+                                <div class="section-question">
+                                    <div class="header-question"><b>What do you know about Discord?</b></div>
+                                    <textarea name="question1" required></textarea>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>Have you ever had experience as an admin, staff, or moderator?</b></div>
+                                    <div class="choice">
+                                        <div class="choice-container">
+                                            <div class="choice-item">
+                                                <input type="radio" value="YES" name="question2" required>
+                                                <label class="radio-label">YES</label>
+                                            </div>
+                                            <div class="choice-item">
+                                                <input type="radio" value="NO" name="question2" required>
+                                                <label class="radio-label">NO</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>How many servers do you have?</b></div>
+                                    <input type="number" value="" name="question3" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>How active are you from a scale of 1-10?</b></div>
+                                    <input type="number" value="" placeholder="1 - 10" name="question4" maxlength="2" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>What is your timezone?</b></div>
+                                    <input type="text" value="" name="question5" maxlength="256" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>Have you ever had problems with other staff on a different server that forced you to leave the server? And why?</b></div>
+                                    <textarea name="question6" required></textarea>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>If you became official staff, what would you do?</b></div>
+                                    <input type="text" value="" name="question7" maxlength="1000" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>What will you do if a raider/spammer comes and your the only staff only or the other staff online is busy?</b></div>
+                                    <input type="text" value="" name="question8" maxlength="1000" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>Have you ever had to kick or get banned from other servers, because of what you did?</b></div>
+                                    <input type="text" value="" name="question9", maxlength="1000" required>
+                                </div>
+                                <div class="section-question">
+                                    <div class="header-question"><b>If you think that there are rules that are incomplete in explaining something, what are they? And how to explain it briefly and completely?</b></div>
+                                    <textarea name="question10" required></textarea>
+                                </div>
+                                <input class="btn btn-success" type="submit" value="SUBMIT">
+                            </form>
+                        <%}%>
+                    <%}else{%>
+                        <div class="closed-application-container">
+                            <%if(bot.data.ownerId.includes(req.session.user.id)){%>
+                                <form class="control-application" action="/teams/application/status" method="post">
+                                    <div>You can open this application by click <b>OPEN</b> button!</div>
+                                    <input class="btn btn-success" type="submit" value="OPEN" name="open">
+                                    <input class="btn btn-success" type="submit" value="CLOSE" name="close" disabled>
+                                </form>
+                            <%}%>
+                            <div class="closed-application">
+                                <h2>The Application Has Been Closed!</h2>
+                                <div>
+                                    <img class="vector-locked" src="https://static.vecteezy.com/system/resources/previews/000/616/062/original/vector-lock-icon.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                <%}%>
+            <%}else{%>
+                <div style="text-align: center;">
+                    <h2>You Can't Fill Application!</h2>
+                    <div style="color: white;">You can't fill out the application until you join our <span style="cursor: pointer;color: purple;" onclick="window.location = `/discord`">community server</span>!</div>
+                    <div>
+                        <img class="vector-locked" src="https://static.vecteezy.com/system/resources/previews/000/616/062/original/vector-lock-icon.jpg" alt="">
+                    </div>
+                </div>
+            <%}%>
+        </section>
+    </body>
+</html>

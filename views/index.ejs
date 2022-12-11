@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="image/png" property="og:image:type">
+        <meta content="<%=guild.name%>" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com" property="og:url">
+        <meta content="<%=guild.iconURL(bot.data.avatarOptions)%>" property="og:image">
+        <meta content="https://fnafmultiverse.herokuapp.com/discord-icon.png" property="og:image:secure_url">
+        <%- include('partials/head.ejs') %>
+        <title>Home | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="main-section-container">
+            <div class="fnaf-multiverse-description-container" style="display: flex;color: white;">
+                <img class="helpy-welcome-icon" src="/helpy-welcome.png" alt="helpy-welcome-icon">
+                <div class="fnaf-multiverse-description">
+                    <h3 class="header-description">Welcome To The <b><%=guild.name%></b></h3>
+                    <div>
+                        Welcome to the official site of the FNaF Multiverse! An official website for a community of FNaF fans founded by <%=guild.members.cache.get("701746547536429146").user.tag%> and <%=guild.members.cache.get("452264675099541505").user.tag%>.
+                        This FNaF fan community was first founded on Discord, and it is still active today. Want to join? <a href="/discord" target="_blank">Join now</a>.
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a class="social-media-btn" style="background-color: red;" href="/youtube" target="_blank"><i class="fa fa-youtube-play"></i>YouTube</a>
+                        <a class="social-media-btn" style="background-color: orange;" href="/reddit" target="_blank"><i class="fa fa-reddit"></i></i>Reddit</a>
+                        <a class="social-media-btn" style="background-color: #1DA1F2;" href="/twitter" target="_blank"><i class="fa fa-twitter"></i>Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

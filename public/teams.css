@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+.opening-container {
+    display: flex;
+    margin: 30px;
+}
+
+.staff-icon {
+    width: auto;
+    height: 250px;
+}
+
+.opening-description {
+    text-align: justify;
+    font-size: 20px;
+    margin: 50px 50px 0 0;
+}
+
+.staff-section {
+    margin: 10px 0 10px 0;
+}
+
+.prime-minister-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.moderators-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.jrs-moderators-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* card section */
+
+.card-admin-container {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cceb1c;
+    transition: all 0.2s;
+}
+
+.card-admin-container:hover {
+    background-color: #80991a;
+    box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-moderators-container {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2c32a7;
+    transition: all 0.2s;
+}
+
+.card-moderators-container:hover {
+    background-color: #222785;
+    box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-jrs-moderators-container {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4aacb9;
+    transition: all 0.2s;
+}
+
+.card-jrs-moderators-container:hover {
+    background-color: #398892;
+    box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.staff-avatar {
+    border-radius: 50%;
+    width: auto;
+    height: 150px;
+    margin: 10px auto 10px;
+    display: block;
+}
+
+.staff {
+    text-align: center;
+}
+
+.user-tag {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .opening-container {
+        margin: 30px;
+        display: block;
+    }
+    
+    .staff-icon {
+        width: auto;
+        height: 200px;
+        margin: 10px auto 10px;
+        display: block;
+    }
+    
+    .opening-description {
+        text-align: justify;
+        font-size: 10px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .prime-minister-container {
+        display: block;
+    }
+
+    .moderators-container {
+        display: block;
+    }
+
+    .jrs-moderators-container {
+        display: block;
+    }
+
+    .card-admin-container {
+        margin: 10px 5px 0 5px;
+    }
+
+    .card-moderators-container {
+        margin: 10px 5px 0 5px;
+    }
+
+    .card-moderators-container {
+        margin: 10px 5px 0 5px;
+    }
+
+    .card-jrs-moderators-container {
+        margin: 10px 5px 0 5px;
+    }
+}

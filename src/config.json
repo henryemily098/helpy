@@ -1,0 +1,14 @@
+{
+    "prefix": "=",
+    "color": "#478de4",
+    "badwords": [
+        "n1gga", "nigger", "nigga", "nigger"
+    ],
+    "ownerId": ["452264675099541505"],
+    "greetingMsg": "Welcome to the **{guild}**, {user}! This server is a server intended for FNaF fans. We here have various channels and categories related to FNaF, if you want more information, please read #welcome:100:\n\nAnd don't forget to read and follow:\nToS - <https://dis.gd/terms>\nGuidelines - <https://dis.gd/guidelines\n\nThank you for joining our server and have fun!\n\nCheck our site:\n<https://fnafmultiverse.herokuapp.com>",
+    "avatarOptions": {
+        "dynamic": true,
+        "size": 1024,
+        "format": "png"
+    }
+}

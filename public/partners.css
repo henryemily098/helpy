@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://wallpapercave.com/wp/wp2219073.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+button {
+    transition: all 0.2s;
+}
+
+.header {
+    color: white;
+    display: flex;
+    margin: 10px 0 0 10px;
+    padding: 20px;
+}
+
+.header-page {
+    font-size: 30px;
+}
+
+.header-description {
+    font-size: 15px;
+}
+
+.helpy-dance {
+    width: auto;
+    height: 150px;
+}
+
+/* guild information */
+
+.partners-container {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.list-partners-guild {
+    margin: 20px 0 0 0;
+}
+
+.guild-container {
+    background-color: wheat;
+    padding: 20px 100% 0 0;
+    border-radius: 5px;
+    justify-content: space-between;
+    display: flex;
+    margin: 25px 5px 25px 5px;
+}
+
+.guild-information-container {
+    display: flex;
+}
+
+.guild-information {
+    margin: 25px 0 0 20px;
+}
+
+.line-container {
+    width: 10px;
+    height: 95%;
+    background-color: black;
+    margin: 0 5px 0 5px;
+}
+
+.guild-icon {
+    width: auto;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.header-guild-name {
+    font-size: 20px;
+}
+
+.description-guild-container {
+    text-align: justify;
+    opacity: 0.8;
+}
+
+.guild-banner-container {
+    margin: 5px 200px 5px 200px;
+}
+
+.guild-banner {
+    width: auto;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.view-button-guild {
+    border-style: none;
+    border-radius: 5px;
+    background-color: #0a9e5d;
+    padding: 5px 50px 5px 50px;
+    margin: 15px 0 0 5px;
+}
+
+.view-button-guild:hover {
+    background-color: #0b6d35;
+}
+
+.view-button-guild:active {
+    background-color: darkgreen;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        color: white;
+        display: flex;
+        margin: 10px 0 0 10px;
+        padding: 20px;
+    }
+
+    .header-page {
+        font-size: 15px
+    }
+
+    .header-description {
+        font-size: 10px;
+    }
+    
+    .helpy-dance {
+        display: none;
+    }
+    
+    /* guild information */
+    
+    .partners-container {
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .list-partners-guild {
+        margin: 0 0 0 0;
+    }
+    
+    .guild-container {
+        background-color: wheat;
+        padding: 20px;
+        border-radius: 5px;
+        justify-content: space-between;
+        margin: 25px 5px 25px 5px;
+    }
+    
+    .guild-information-container {
+        display: block;
+    }
+    
+    .guild-information {
+        margin: 10px 0 0 0;
+    }
+    
+    .line-container {
+        display: none;
+    }
+
+    .header-guild-name {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .description-guild-container {
+        text-align: justify;
+        opacity: 0.8;
+        font-size: 10px;
+    }
+
+    .description-guild-container {
+        text-align: justify;
+    }
+    
+    .guild-icon {
+        width: auto;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .guild-icon-container {
+        text-align: center;
+    }
+    
+    .guild-banner-container {
+        display: none;
+    }
+
+    .btn-container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .view-button-guild {
+        border-style: none;
+        border-radius: 5px;
+        background-color: #0a9e5d;
+        padding: 5px 50px 5px 50px;
+        margin: 15px 5px 0 5px;
+    }
+    
+    .view-button-guild:hover {
+        background-color: #0b6d35;
+    }
+}

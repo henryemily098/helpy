@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/userProfile.css">
+        <%- include('partials/head.ejs') %>
+        <title><%=req.session.user.username%> | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="userProfile-container">
+            <div>
+                <div class="section-page">
+                    <div class="avatar-user-container">
+                        <div class="user-info-container">
+                            <img class="avatar-icon" src="<%=req.session.user.avatarURL%>" alt="avatar-url">
+                            <div class="user-description">
+                                <h3><%=req.session.user.tag%></h3>
+                                <div>Welcome to your profile page, <%=req.session.user.tag%>!</div>
+                                <%if(guild.members.cache.get(req.session.user.id)){%>
+                                    <%if(guild.members.cache.get(req.session.user.id).presence.status === "offline"){%>
+                                        <b>Status: </b> ⚫️Offline
+                                    <%}else if(guild.members.cache.get(req.session.user.id).presence.status === "online"){%>
+                                        <b>Status: </b> 🟢Online
+                                    <%}else if(guild.members.cache.get(req.session.user.id).presence.status === "dnd"){%>
+                                        <b>Status: </b> ⛔️Do Not Disturb
+                                    <%}else if(guild.members.cache.get(req.session.user.id).presence.status === "idle"){%>
+                                        <b>Status: </b> 🌙Idle
+                                    <%}else{%>
+                                        <b>Status: </b> ⚫️Offline
+                                    <%}%>
+                                <%}else{%>
+                                    <i style="font-size: 10px;position: absolute;">You're not joined the server! <a style="color: black;" href="/discord">Join now</a>!</i>
+                                <%}%>
+                            </div>
+                        </div>
+                        <div class="nickname-container">
+                            <%if(guild.members.cache.get(req.session.user.id)){%>
+                                <div class="input-form-container">
+                                    <h3 style="font-size: 20px;text-align: center;">Manage Nickname</h3>
+                                    <form action="/profile/<%=req.session.user.id%>/edit" method="post">
+                                        <%let member = guild.members.cache.get(req.session.user.id)%> 
+                                        <%if(!member.roles.cache.get("706745103984754718") && !member.roles.cache.get("862700534058582017") && !member.roles.cache.get("723820945101291530") && member.roles.cache.get("718747564756828193")){%>
+                                            <div class="manage-nickname-container">
+                                                <%if(member.nickname !== member.user.username){%>
+                                                    <input type="text" value="<%=member.nickname%>" placeholder="<%=req.session.user.tag%>" disabled><br>
+                                                <%}else{%>
+                                                    <input type="text" value="" placeholder="<%=req.session.user.tag%>" disabled><br>
+                                                <%}%>  
+                                            </div>
+                                            <input type="submit" value="CHANGE" disabled>
+                                            <input type="submit" value="RESET" disabled>
+                                        <%}else{%>
+                                            <div class="manage-nickname-container">
+                                                <%if(member.nickname !== member.user.username){%>
+                                                    <input type="text" value="<%=member.nickname%>" name="newNickname" placeholder="<%=req.session.user.tag%>" required><br>
+                                                <%}else{%>
+                                                    <input type="text" value="" name="newNickname" placeholder="<%=req.session.user.tag%>" required><br>
+                                                <%}%>  
+                                            </div>
+                                            <div style="text-align: center;">
+                                                <input type="submit" value="CHANGE" name="change">
+                                                <input type="submit" value="RESET" name="reset">
+                                            </div>
+                                        <%}%>
+                                    </form>
+                                </div>
+                            <%}else{%>
+                                <div class="input-form-container">
+                                    <h3 style="padding: 24px;"><i>JOIN SERVER FIRST</i></h3>
+                                </div>
+                            <%}%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-additional-information">
+                        <div class="roles-container">
+                            <%if(guild.members.cache.get(req.session.user.id)){%>
+                                <%let member = guild.members.cache.get(req.session.user.id)%> 
+                                <h3 class="header-roles" style="text-align: center;margin-top: 20px;">Roles</h3>
+                                <div class="text-roles-container" style="margin-left: 20px;margin-right: 20px;text-align: justify;background-color: bisque; border-radius: 10px;">
+                                    <%=member.roles.cache.filter(role => role.id !== guild.roles.everyone.id).map((role, index) => role.name).join(", ")%> 
+                                </div>
+                            <%}else{%>
+                                <h3 style="padding: 30px;"><i>JOIN SERVER FIRST</i></h3>
+                            <%}%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="banner-image" src="/banner-image.png" alt="<%=guild.name%> banner">
+                <%if(guild.members.cache.get(req.session.user.id)){%>
+                    <div class="down-image-container" style="text-align: center;">
+                        <a style="color: black;font-size: 10px;" target="_blank" href="https://discordapp.com/channels/706744372326039573/719038487214686278">
+                            Don't forget to read the rules!
+                        </a>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+    </body>
+</html>

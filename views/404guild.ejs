@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('partials/head.ejs') %> 
+        <title>Page Not Found | 404 <%=guild.name%></title>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="content-container">
+                <img class="helpy-sad-icon" onerror="this.src = `/helpy-sad.png`" src="/helpy-sad.png" alt="">
+                <div class="center-line"></div>
+                <div>
+                    <div class="header-page">404</div>
+                    <div class="description-page">Cannot find <%=msg%></div>
+                    <div class="btn btn-primary" onclick="window.location = `<%=url%>`;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                        </svg>
+                        <div>
+                            GO TO <%=backMsg.toLocaleUpperCase()%> PAGE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab331a8b-3ced-4c7f-8190-6ec05e7f14cd/dckhb06-3392423a-03de-45ae-83e9-72c09646473b.png/v1/fill/w_840,h_952,q_75,strp/fredbear__ucn__by_greenrou-dckhb06.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9hYjMzMWE4Yi0zY2VkLTRjN2YtODE5MC02ZWMwNWU3ZjE0Y2QvZGNraGIwNi0zMzkyNDIzYS0wM2RlLTQ1YWUtODNlOS03MmMwOTY0NjQ3M2IucG5nIiwid2lkdGgiOiI8PTg0MCIsImhlaWdodCI6Ijw9OTUyIn1dXX0.UMzBR0rpMcZcB8cGVPbhAedHEneu2CV3V094J9lSX7I");
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .page-container {
+            color: white;
+            margin: 15% 0 0 0;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .helpy-sad-icon {
+            width: auto;
+            height: 200px;
+        }
+
+        .header-page {
+            font-size: 100px;
+        }
+
+        .center-line {
+            width: 5px;
+            height: 200px;
+            background-color: white;
+            margin: 25px 45px 0 0;
+        }
+
+        .btn-primary {
+            display: flex;
+        }
+
+        .bi-arrow-left-circle {
+            margin: 4.9px 5px 0 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .content-container {
+                display: block;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .center-line {
+                display: none;
+            }
+
+            .btn-primary {
+                margin: 10px 90px 0 105px;
+            }
+        }
+    </style>
+</html>

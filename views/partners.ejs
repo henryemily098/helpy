@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/partners.css">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="Partners" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/partners" property="og:url">
+        <meta content="<%=guild.iconURL({ dynamic: true, format: "png", size: 1024 })%>" property="og:image">
+        <%- include('partials/head.ejs') %>
+        <title>Partners | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="header">
+            <img class="helpy-dance" src="/helpy-dance.gif" alt="">
+            <div style="margin: 50px 5px 0 0">
+                <div class="header-page">
+                    <b>
+                        <%=guild.name.toLocaleUpperCase()%> OFFICIAL PARTNERS 
+                    </b>
+                </div>
+                <div class="header-description">
+                    Want to partner with us? Read the <a href="/partners/terms">Terms and Requirements</a> first!
+                </div>
+            </div>
+        </section>
+        <section class="partners-container">
+            <div class="list-partners-guild">
+                <%for(let partner of data.partnerList){%>
+                    <div class="guild-container">
+                        <div class="guild-information-container">
+                            <div class="guild-icon-container">
+                                <img class="guild-icon" onerror="this.src = `/discord-icon.png`" src="/partners/<%=partner.guild.id%>/<%=partner.ticketId%>.png" alt="guild-icon-changed">
+                            </div>
+                            <div class="line-container"></div>
+                            <div class="guild-information">
+                                <div class="information-container">
+                                    <h3 class="header-guild-name"><b><%=partner.guild.name > 10 ? partner.guild.name.substr(0, 10)+"..." : partner.guild.name%></b></h3>
+                                    <div class="description-guild-container">
+                                        <%let description = partner.guild.description.length > 256 ? partner.guild.description.substr(0, 256)+"..." : partner.guild.description%> 
+                                        <%=description%>
+                                    </div>
+                                </div>
+                                <div class="btn-container" style="display: flex;">
+                                    <a href="/partners/<%=partner.guild.id%>">
+                                        <button class="view-button-guild">VIEW</button>
+                                    </a>
+                                    <a href="<%=partner.guild.inviteLink%>">
+                                        <button class="view-button-guild">JOIN</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guild-banner-container">
+                            <img style="margin: 10px auto 20px;display: block;" onerror="this.src = `/replace-banner.jpg`;" class="guild-banner" src="<%=partner.guild.banner ? partner.guild.banner : null%>" alt="">
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+    </body>
+</html>

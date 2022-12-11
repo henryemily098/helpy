@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://getwallpapers.com/wallpaper/full/3/6/b/493230.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+span {
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+span:hover {
+    color: wheat;
+}
+
+.partner-terms-header {
+    color: black;
+    background-color: wheat;
+    display: flex;
+}
+
+.partner-terms-guider {
+    display: flex;
+}
+
+.partner-terms-header-container {
+    margin: 50px 120px 50px 120px;
+}
+
+.partner-terms-guider-avatar {
+    width: auto;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.partner-terms-guider-information {
+    margin: 10px 0 0 10px;
+}
+
+.partner-terms-guider-role {
+    cursor: pointer;
+}
+
+.partner-terms-description {
+    text-align: justify;
+    margin: 10px 0 0 0;
+}
+
+.terms-requirements-container {
+    color: white;
+    margin: 30px 50px 30px 50px;
+}
+
+.section-terms {
+    text-align: justify;
+    margin: 80px 0 80px 0;
+}
+
+.header-terms {
+    font-size: 30px;
+}
+
+.terms-footer-container {
+    color: white;
+    background-color: #382a2a;
+    padding: 15px 0 15px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 10px 20px;
+}
+
+.footer-header {
+    font-size: 30px;
+}
+
+.footer-information-container {
+    margin: 120px 110px 25px 110px;
+}
+
+.partner-image-container {
+    border-radius: 10px;
+    width: auto;
+    height: 400px;
+    margin: 0 30px 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .partner-terms-header-container {
+        margin: 50px 10px 50px 10px;
+    }
+
+    .terms-requirements-container {
+        color: white;
+        margin: 30px 10px 30px 10px;
+    }
+
+    .header-terms {
+        font-size: 20px;
+    }
+
+    .description-terms {
+        font-size: 15px;
+    }
+
+    .footer-information-container {
+        margin: 100px 0 30px 0;
+    }
+
+    .footer-header {
+        font-size: 20px;
+    }
+
+    .footer-description {
+        font-size: 15px;
+        text-align: justify;
+        margin: 0 0 10px 0 ;
+    }
+
+    .partner-image-container {
+        display: none;
+    }
+}

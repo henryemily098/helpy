@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://wallpapercave.com/wp/wp5559084.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.faq-container {
+    color: white;
+}
+
+.faq-header {
+    color: black;
+    background-color: wheat;
+    display: flex;
+}
+
+.faq-header-container {
+    margin: 50px 120px 50px 120px;
+}
+
+.faq-user-guide {
+    display: flex;
+}
+
+.faq-user-guider-tag {
+    color: #291c53;
+}
+
+.faq-user-guider-role {
+    cursor: pointer;
+}
+
+.faq-user-guide-avatar {
+    width: auto;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.faq-user-information {
+    margin: 10px 0 0 10px;
+}
+
+.faq-introduction {
+    margin: 15px 0 0 0;
+    text-align: justify;
+}
+
+.question-container {
+    margin: 80px 50px 0 50px;
+}
+
+.question-header {
+    font-size: 30px;
+}
+
+.question-answer {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+    .faq-header-container {
+        margin: 50px 20px 50px 20px;
+    }
+
+    .question-container {
+        margin: 20px 10px 15px 10px;
+    }
+
+    .question-header {
+        font-size: 25px;
+    }
+
+    .question-answer {
+        font-size: 13px;
+    }
+}

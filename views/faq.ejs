@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="FAQ" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/faq" property="og:url">
+        <meta content="<%=guild.iconURL({ dynamic: true, format: "png", size: 1024 })%>" property="og:image">
+        <link rel="stylesheet" href="/faq.css">
+        <%- include('partials/head.ejs') %> 
+        <title>FAQ | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="faq-header">
+            <div class="faq-header-container">
+                <div class="faq-user-guide">
+                    <img class="faq-user-guide-avatar" onerror="this.src = `/discord-icon.png`" src="<%=guider.user.displayAvatarURL(bot.data.avatarOptions)%>" alt="">
+                    <div class="faq-user-information">
+                        <div class="faq-user-guider-tag"><b><%=guider.user.username%></b></div>
+                        <div class="faq-user-guider-role" onclick="window.location = `/teams`"><%=guider.roles.highest.name.toLocaleUpperCase()%></div>
+                    </div>
+                </div>
+                <div class="faq-introduction">
+                    Welcome valued customers to FAQ! Where we take your most asked questions and give you your answers! At the moment, we do not have a channel for your questions, but don’t be shy to message one of our staff members who is happy to help the Fazbear EntertainmentTM family way, because happy customers make a happy business. 
+                </div>
+            </div>
+        </section>
+        <section class="faq-container">
+            <div class="question-container">
+                <div class="question-header"><b>WHAT IS <%=guild.name.toLocaleUpperCase()%>?</b></div>
+                <div class="question-answer">
+                    FNaF Multiverse is a community of FNaF fans created on Discord in 2020 (so this includes a new fan community on FNaF). The main goal of this community is to help the FNaF Franchise to keep growing. We have to admit that this community is not like other FNaF communities which have many events, but that's because we are still developing this community to be better.
+                </div>
+            </div>
+            <div class="question-container">
+                <div class="question-header"><b>WHAT IS THE MAIN LANGUAGE OF THIS COMMUNITY?</b></div>
+                <div class="question-answer">
+                    English. The main language on this server is English. Whether it's British English or something else, as long as it's English, it doesn't matter.<br><br>However, this community in Discord provides a place for you to use languages other than English. You can use those languages in the categories that we have prepared, as well as use the channels that we have prepared as well.
+                </div>
+            </div>
+            <div class="question-container">
+                <div class="question-header"><b>HOW CAN I BE PART OF THE STAFF TEAM?</b></div>
+                <div class="question-answer">
+                    Well, first of all, you need to join our <a href="/discord">Discord Server</a>. Because we only take people from our Discord Server, and not outside from it. And also we'll announce it in Discord when we need additional staff.
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

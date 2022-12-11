@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/applyPartner.css">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="Partner Apply" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/partners/apply" property="og:url">
+        <meta content="<%=guild.iconURL({ dynamic: true, format: "png", size: 1024 })%>" property="og:image">
+        <%- include('partials/head.ejs') %>
+        <title>Apply Partner | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %> 
+        <section class="contact-page-container">
+            <form class="contact-send" action="/partners/apply/submit" method="post">
+                <div class="server-id-container">
+                    <div><b>Server ID</b></div>
+                    <input type="text" name="id" value="" maxlength="256" required>
+                </div>
+                <div class="inviteLink-input-container">
+                    <div><b>Invite Link</b></div>
+                    <input type="url" name="invite" value="" placeholder="https://discord.gg/ || https://discord.com/invite/" maxlength="256" required>
+                </div>
+                <div class="banner-input-container">
+                    <div><b>Banner</b></div>
+                    <input type="url" name="banner" value="" maxlength="256">
+                    <div style="font-size: 10px;">
+                        This is optional, you can fill this or not.
+                    </div>
+                </div>
+                <div class="description-container">
+                    <div><b>Server Description</b></div>
+                    <textarea name="description" rows="10" maxlength="4096" required></textarea>
+                </div>
+                <div>
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </form>
+            <div class="partner-example-container">
+                <div style="text-align: center;color: white;">
+                    <b>Partner With Us Now!</b><br>
+                    <div>Don't forget to read the <a href="/partners/terms">terms and requirements!</a></div>
+                </div>
+                <img class="partner-example-image" src="/partner-example.png" alt="">
+            </div>
+        </section>
+    </body>
+</html>

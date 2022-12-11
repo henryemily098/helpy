@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.guild-icon {
+    margin: 10px auto 20px;
+    display: block;
+    border-radius: 50%;
+}
+
+.guild-description-container {
+    text-align: center;
+}

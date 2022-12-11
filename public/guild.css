@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://getwallpapers.com/wallpaper/full/3/3/3/318761.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+#guild-container {
+    margin: 100px 0 0 0;
+    height: 10cm;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.refresh-vector {
+    width: auto;
+    height: 20px;
+}
+
+.header-guild-container {
+    background-color: brown;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.guild-icon {
+    width: auto;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#description-container {
+    color: white;
+    opacity: 1;
+    border-radius: 10px;
+    margin: 0 0 0 30px;
+    background-color: rgba(255, 100, 100, 0.4)
+}
+
+.button-container {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.container-btn {
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.submit-btn {
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    #guild-container {
+        height: 10cm;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        display: block;
+    }
+    
+    .header-guild-container {
+        background-color: brown;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 10px 0 10px;
+    }
+    
+    .guild-icon {
+        width: auto;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    textarea {
+        width: 100%;
+    }
+    
+    #description-container {
+        margin: 10px 0 0 0;
+        color: white;
+        opacity: 1;
+        border-radius: 10px;
+        background-color: rgba(255, 100, 100, 0.4)
+    }
+
+    .button-primary {
+        border-radius: 10px;
+        text-align: center;
+        padding: 0 43% 0 43%;
+        margin: 10px 0 0 0;
+        border-style: none;
+        background-color: green;
+        color: white;
+    }
+}

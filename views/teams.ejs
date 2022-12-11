@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="<%=guild.name%>" property="og:site_name">
+        <meta content="Teams" property="og:title">
+        <meta content="FNaF Multiverse its the fan-community server that based on Discord. We talking a lot of things that related to Five Nights at Freddy's." property="og:description">
+        <meta content="https://fnafmultiverse.herokuapp.com/teams" property="og:url">
+        <link rel="stylesheet" href="/teams.css">
+        <%- include('partials/head.ejs') %>
+        <title>Teams | <%=guild.name%></title>
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+        <section class="opening-section">
+            <div class="opening-container">
+                <img class="staff-icon" onerror="this.src = `/staff-icon.png`" src="/staff-icon.png" alt="">
+                <div class="opening-description">
+                    <p>
+                        Our community has a team to manage and manage this community, so that this community is directed and organized. You can contact them if you have any questions, or maybe you want to tell them something important.
+                    </p>
+                    <p>
+                        <%if(data.status){%>
+                            Note: We are currently looking for new staff to help manage this community, if you are interested, <span style="color: purple;cursor: pointer;" onclick="window.location = `/teams/application`">click here</span> to fill out the form!
+                        <%}else{%>
+                            Note: We re still closing the staff app for now. We will only open the app if we need additional staff to help.
+                        <%}%>
+                        <%if(req.session.user){%>
+                            <%if(bot.data.ownerId.includes(req.session.user.id)){%>
+                                <%if(data.status){%>
+                                    <form class="control-application" action="/teams/status" method="post">
+                                        <input class="btn btn-success" type="submit" value="OPEN APPLICATION" name="open" disabled>
+                                        <input class="btn btn-success" type="submit" value="CLOSE APPLICATION" name="close">
+                                    </form>
+                                <%}else{%>
+                                    <form class="control-application" action="/teams/status" method="post">
+                                        <input class="btn btn-success" type="submit" value="OPEN APPLICATION" name="open">
+                                        <input class="btn btn-success" type="submit" value="CLOSE APPLICATION" name="close" disabled>
+                                    </form>
+                                <%}%>
+                            <%}%>
+                        <%}%>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="staff-section">
+            <h3>Administrator</h3>
+            <div class="prime-minister-container">
+                <%for(let admin of primeMinister.toJSON()){%>
+                    <%let member = guild.members.cache.get(admin.user.id)%>
+                    <div class="card-admin-container">
+                        <img class="staff-avatar" src="<%=member.user.displayAvatarURL(bot.data.avatarOptions)%>" alt="">
+                        <div class="staff user-tag"><%=member.user.username%></div>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+        <section class="staff-section">
+            <h3>Moderators</h3>
+            <div class="moderators-container">
+                <%for(let moderator of moderators.toJSON()){%>
+                    <%let member = guild.members.cache.get(moderator.user.id)%>
+                    <div class="card-moderators-container">
+                        <img class="staff-avatar" src="<%=member.user.displayAvatarURL(bot.data.avatarOptions)%>" alt="">
+                        <div class="staff user-tag"><%=member.user.username%></div>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+        <section class="staff-section">
+            <h3>Jrs Moderators</h3>
+            <div class="jrs-moderators-container">
+                <%for(let moderator of jrsModerators.toJSON()){%>
+                    <%let member = guild.members.cache.get(moderator.user.id)%>
+                    <div class="card-jrs-moderators-container">
+                        <img class="staff-avatar" src="<%=member.user.displayAvatarURL(bot.data.avatarOptions)%>" alt="">
+                        <div class="staff user-tag"><%=member.user.username%></div>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+    </body>
+</html>

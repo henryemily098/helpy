@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+}
+
+.guide-control {
+    margin: 25px 0 0 0;
+}
+
+.warning-message {
+    font-size: 10px;
+    margin: 0 0 10px 0;
+}
+
+.card-container {
+    text-align: center;
+    background-color: wheat;
+    margin: 10px 300px 10px 300px;
+    border-radius: 10px;
+}
+
+.question {
+    margin: 10px;
+}
+
+.btn-container {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-container {
+        text-align: center;
+        background-color: wheat;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .question {
+        margin: 5px;
+    }
+    
+    .btn-container {
+        text-align: center;
+        margin: 10px 0 10px 0;
+    }
+}

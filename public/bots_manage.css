@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    display: flex;
+}
+
+select {
+    height: 29.5px;
+}
+
+.search-engines {
+    margin: 20px;
+}
+
+input[type=text] {
+    width: 15rem;
+}
+
+.result-container {
+    border-radius: 10px;
+    background-color: gray;
+    padding: 10px;
+}
+
+.thumbnail {
+    width: auto;
+    height: 8rem;
+    border-radius: 10px;
+}
+
+.add-btn {
+    border-radius: 50%;
+    border: none;
+}
+
+.result-container {
+    display: flex;
+}

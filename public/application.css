@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://i.ytimg.com/vi/URXGuQ-y2I0/maxresdefault.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+.form-section {
+    text-align: center;
+    margin: 100px;
+}
+
+.header-question {
+    font-size: 20px;
+}
+
+.section-question {
+    margin: 10px 250px 10px 250px;
+    background-color: wheat;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+textarea {
+    resize: none;
+    width: 90%;
+    height: 150px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    width: 90%;
+    -moz-appearance: textfield;
+}
+
+input[type=text] {
+    width: 90%;
+}
+
+.choice {
+    display: inline-block;
+    margin: auto;
+}
+
+.choice-container {
+    display: flex;
+}
+
+.choice-item {
+    display: flex;
+    margin: 0 0 0 5px;
+}
+
+input[type=radio] {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.radio-label {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 3%;
+}
+
+.clipboard {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.clipboard-checks {
+    background-image: url("http://freevector.co/wp-content/uploads/2009/04/65608-clipboard-with-check-marks.png");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    align-items: center;
+}
+
+.control-application {
+    color: white;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.vector-locked {
+    border-radius: 50%;
+    width: auto;
+    height: 150px;
+}
+
+@media only screen and (max-width:600px) {
+    h2 {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    h3 {
+        font-size: 15px;
+        color: white;
+    }
+    
+    .form-section {
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .header-question {
+        font-size: 15px;
+    }
+    
+    .section-question {
+        margin: 10px 0 10px 0;
+        background-color: wheat;
+        border-radius: 10px;
+        padding: 20px;
+    }
+}
