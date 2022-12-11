@@ -6,6 +6,7 @@ const session = require("express-session");
 const Store = require("connect-mongo");
 const bodyParser = require("body-parser");
 const express = require("express");
+const cors = require("cors");
 
 class Dashboard {
     constructor({ bot=new Client(), port=Number() }) {
@@ -40,6 +41,10 @@ class Dashboard {
             })
         })
 
+        app.use(cors({
+            credentials: true,
+            origin: ["https://cdn.glitchtrapbot.xyz"]
+        }));
         app.use(sessionIs);
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({

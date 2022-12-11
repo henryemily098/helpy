@@ -2,7 +2,9 @@ require("dotenv").config();
 const fs = require("fs");
 const Client = require("./src/client/Client");
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB, {autoIndex: false});
+
+mongoose.set("strictQuery", false);
+mongoose.connect(process.env.MONGODB).catch(console.log);
 
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");

@@ -1,18 +1,33 @@
-const { TrackInfo } = require("../lib/index");
 const { Reddit } = require("../Reddit/index");
-const { Client, Collection, Intents } = require('discord.js');
-const allIntents = new Intents(32767);
+const { Client, Collection, Partials } = require('discord.js');
 
 module.exports = class extends Client {
     constructor() {
         super({
-            partials: ["MESSAGE", "GUILD_MEMBER", "REACTION", "USER", "CHANNEL"],
-            intents: allIntents
+            partials: [Partials.Channel, Partials.GuildMember, Partials.GuildScheduledEvent, Partials.Message, Partials.Reaction, Partials.ThreadMember, Partials.User],
+            intents: [
+                "DirectMessageReactions",
+                "DirectMessageTyping",
+                "DirectMessages",
+                "GuildBans",
+                "GuildEmojisAndStickers",
+                "GuildIntegrations",
+                "GuildInvites",
+                "GuildMembers",
+                "GuildMessageReactions",
+                "GuildMessageTyping",
+                "GuildMessages",
+                "GuildPresences",
+                "GuildScheduledEvents",
+                "GuildVoiceStates",
+                "GuildWebhooks",
+                "Guilds",
+                "MessageContent"
+            ]
         });
 
         this.timeout = new Map();
         this.reddit = new Reddit();
-        this.grab = new TrackInfo({ youtube: true, spotify: true, soundcloud: true });
 
         this.reminders = new Map();
         this.interactions = new Collection();
